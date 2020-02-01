@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>Index</title>
+    <script>
+        let scenes = [];
+        for(let i=0;i<16;i++) scenes.push('scene_' + i + '.jpg');
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+
+        function refresh() {
+            // 生成随机图片序列
+            let data = scenes.slice();
+            let newScene = [];
+            let n=16, k=6;
+            for(let i=0;i<k;i++){
+                let pos = getRandomInt(n-i) + i;
+                let tmp = data[pos];data[pos] = data[i];data[i] = tmp;
+                // console.log(data[i], ' ');
+                newScene.push(data[i])
+            }
+            // 重新渲染
+            let innerHTML = '';
+            for(let i = 0; i < k; i += 3) {
+                innerHTML += '<div class="display-row">';
+                for(let j = i; j < i+3; j++) {
+                    innerHTML += '<div class="display-col">';
+                    innerHTML += '<div><img src="img/scenes/' + newScene[j] + '" /></div>';
+                    innerHTML += '<p class="title">Title</p>';
+                    innerHTML += '<p class="intro">This is my first photograph, thank you for visiting and</p>'
+                    innerHTML +=  '</div>';
+                }
+                innerHTML += '</div>';
+            }
+            // console.log(innerHTML);
+            $('.display').html(innerHTML)
+        }
+
+        $().ready(function () {
+            refresh();
+            // 点击刷新按钮
+            $('.refresh').click(function () {
+                // console.log(innerHTML)
+                refresh();
+            });
+            // 点击返回顶部按钮
+            $('.back2top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                },500)
+            });
+            // 自动显示
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 500) {
+                    $(".refresh,.back2top").fadeIn(500);
+                }
+                else {
+                    $(".refresh,.back2top").fadeOut(500);
+                }
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="nav-left">
+                <ul>
+                    <li><img src="img/icons/logo.jpg" class="nav-logo"></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#contact">Browse</a></li>
+                    <li><a href="#about">Search</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="#home" id="account">My account</a></li>
+                </ul>
+                <div class="nav-right-float">
+                    <ul>
+                        <li><a id="upload" href="#home"><i class="fa fa-upload"></i>Upload</a></li>
+                        <li><a id="photo" href="#contact">My Photo</a></li>
+                        <li><a href="#about">Picture</a></li>
+                        <li><a href="login.html">Log In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <img src="img/fudan.jpeg" style="width: 100%" />
+        <div class="display"></div>
+        <div class="footer">
+            <div class="details">
+                <div class="footer-col-container">
+                    <div class="footer-col">
+                        <p><a>使用条款</a></p>
+                        <p><a>隐私保护</a></p>
+                        <p><a>Cookie</a></p>
+                    </div>
+                    <div class="footer-col">
+                        <p><a>关于</a></p>
+                        <p><a>联系我们</a></p>
+                    </div>
+                    <div class="footer-col">
+                        <div>
+                            <img src="img/icons/wechat.png" />
+                            <img src="img/icons/ins.png" />
+                        </div>
+                        <div>
+                            <img src="img/icons/qq.png" />
+                            <img src="img/icons/github.png" />
+                        </div>
+                    </div>
+                </div>
+                <img src="img/wechat2DCode.jpg" />
+            </div>
+            <p class="copyright">Copyright © 2019-2021 Web fundamental. All Rights Reserved. 备案号：沪BILIBILI备12138号-1</p>
+        </div>
+        <div class="refresh">
+            <img src="img/icons/refresh.png" />
+        </div>
+        <div class="back2top">
+            <img src="img/icons/back2top.png" />
+        </div>
+    </div>
+</body>
+</html>
