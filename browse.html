@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="common.css" rel="stylesheet" type="text/css" />
+    <link href="browse.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        let scenes = [];
+        for(let i=0;i<16;i++) scenes.push('scene_' + i + '.jpg');
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+        function refresh() {
+            // 生成随机图片序列
+            let data = scenes.slice();
+            let newScene = [];
+            let n=16, k=16;
+            for(let i=0;i<k;i++){
+                let pos = getRandomInt(n-i) + i;
+                let tmp = data[pos];data[pos] = data[i];data[i] = tmp;
+                // console.log(data[i], ' ');
+                newScene.push(data[i])
+            }
+            // 重新渲染
+            let innerHTML = '';
+            for(let i = 0; i < k; i += 4) {
+                innerHTML += '<div class="display-row">';
+                for(let j = i; j < i+4; j++) {
+                    innerHTML += '<div class="display-col">';
+                    innerHTML += '<img src="img/scenes/' + newScene[j] + '" />';
+                    innerHTML +=  '</div>';
+                }
+                innerHTML += '</div>';
+            }
+            console.log(innerHTML);
+            $('.display').html(innerHTML)
+        }
+
+        $().ready(function () {
+            refresh();
+        })
+
+    </script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-left">
+            <ul>
+                <li><img src="img/icons/logo.jpg" class="nav-logo"></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html" style="background-color: #222">Browse</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="#home" id="account">My account</a></li>
+            </ul>
+            <div class="nav-right-float">
+                <ul>
+                    <li><a id="upload" href="#home"><i class="fa fa-upload"></i>Upload</a></li>
+                    <li><a id="photo" href="#contact">My Photo</a></li>
+                    <li><a href="#about">Picture</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left">
+            <div class="search">
+                <p class="block-title">Search</p>
+                <div class="search-wrap">
+                    <input >
+                    <a><i class="fa fa-search fa-fw"></i></a>
+                </div>
+            </div>
+            <div class="content">
+                <p class="block-title">Content</p>
+                <p><a>China</a></p>
+                <p><a>China</a></p>
+                <p><a>China</a></p>
+                <p><a>China</a></p>
+            </div>
+            <div class="country">
+                <p class="block-title">Country</p>
+                <p><a>China</a></p>
+                <p><a>China</a></p>
+                <p><a>China</a></p>
+                <p><a>China</a></p>
+            </div>
+        </div>
+        <div class="main">
+            <p class="block-title">Filter</p>
+            <div class="filter-wrap">
+                <select>
+                    <option>Apple</option>
+                    <option>Orange</option>
+                    <option>Pineapple</option>
+                    <option>Banana</option>
+                </select>
+                <select>
+                    <option>Apple</option>
+                    <option>Orange</option>
+                    <option>Pineapple</option>
+                    <option>Banana</option>
+                </select>
+                <select>
+                    <option>Apple</option>
+                    <option>Orange</option>
+                    <option>Pineapple</option>
+                    <option>Banana</option>
+                </select>
+                <button class="filter-button">Filter</button>
+            </div>
+            <div class="display">
+<!--                <div class="display-row">-->
+<!--                    <div class="display-col"><img src="img/scenes/scene_1.jpg" /></div>-->
+<!--                    <div class="display-col"><img src="img/scenes/scene_2.jpg" /></div>-->
+<!--                    <div class="display-col"><img src="img/scenes/scene_3.jpg" /></div>-->
+<!--                    <div class="display-col"><img src="img/scenes/scene_4.jpg" /></div>-->
+<!--                </div>-->
+<!--                <div class="display-row">-->
+<!--                    <div class="display-col"><img src="img/scenes/scene_1.jpg" /></div>-->
+<!--                    <div class="display-col"><img src="img/scenes/scene_1.jpg" /></div>-->
+<!--                    <div class="display-col"><img src="img/scenes/scene_1.jpg" /></div>-->
+<!--                    <div class="display-col"><img src="img/scenes/scene_1.jpg" /></div>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
