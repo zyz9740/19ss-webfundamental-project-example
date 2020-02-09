@@ -29,7 +29,7 @@
             for(let i = 0; i < k; i += 4) {
                 innerHTML += '<div class="display-row">';
                 for(let j = i; j < i+4; j++) {
-                    innerHTML += '<div class="display-col">';
+                    innerHTML += '<div class="display-col autofit-cell">';
                     innerHTML += '<img src="img/scenes/' + newScene[j] + '" />';
                     innerHTML +=  '</div>';
                 }
@@ -52,7 +52,7 @@
             <ul>
                 <li><img src="img/icons/logo.jpg" class="nav-logo"></li>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="browse.html" style="background-color: #222">Browse</a></li>
+                <li><a href="browse.html" class="nav-active">Browse</a></li>
                 <li><a href="search.html">Search</a></li>
             </ul>
         </div>
@@ -62,31 +62,31 @@
             </ul>
             <div class="nav-right-float">
                 <ul>
-                    <li><a id="upload" href="#home"><i class="fa fa-upload"></i>Upload</a></li>
-                    <li><a id="photo" href="#contact">My Photo</a></li>
-                    <li><a href="#about">Picture</a></li>
-                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="upload.html"><i class="fa fa-upload"></i>Upload</a></li>
+                    <li><a href="myUpload.html"><i class="fa fa-photo"></i>My Photo</a></li>
+                    <li><a href="favorite.html"><i class="fa fa-heart"></i>My Favorite</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-in"></i>Log In</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="left">
-            <div class="search">
+            <div class="block">
                 <p class="block-title">Search</p>
                 <div class="search-wrap">
                     <input >
                     <a><i class="fa fa-search fa-fw"></i></a>
                 </div>
             </div>
-            <div class="content">
+            <div class="block">
                 <p class="block-title">Content</p>
                 <p><a>China</a></p>
                 <p><a>China</a></p>
                 <p><a>China</a></p>
                 <p><a>China</a></p>
             </div>
-            <div class="country">
+            <div class="block">
                 <p class="block-title">Country</p>
                 <p><a>China</a></p>
                 <p><a>China</a></p>
@@ -94,7 +94,7 @@
                 <p><a>China</a></p>
             </div>
         </div>
-        <div class="main">
+        <div class="main block">
             <p class="block-title">Filter</p>
             <div class="filter-wrap">
                 <select>
@@ -115,23 +115,20 @@
                     <option>Pineapple</option>
                     <option>Banana</option>
                 </select>
-                <button class="filter-button">Filter</button>
+                <button class="confirm">Filter</button>
             </div>
-            <div class="display">
-<!--                <div class="display-row">-->
-<!--                    <div class="display-col"><img src="img/scenes/scene_1.jpg" /></div>-->
-<!--                    <div class="display-col"><img src="img/scenes/scene_2.jpg" /></div>-->
-<!--                    <div class="display-col"><img src="img/scenes/scene_3.jpg" /></div>-->
-<!--                    <div class="display-col"><img src="img/scenes/scene_4.jpg" /></div>-->
-<!--                </div>-->
-<!--                <div class="display-row">-->
-<!--                    <div class="display-col"><img src="img/scenes/scene_1.jpg" /></div>-->
-<!--                    <div class="display-col"><img src="img/scenes/scene_1.jpg" /></div>-->
-<!--                    <div class="display-col"><img src="img/scenes/scene_1.jpg" /></div>-->
-<!--                    <div class="display-col"><img src="img/scenes/scene_1.jpg" /></div>-->
-<!--                </div>-->
+            <div class="display"></div>
+            <div class="paging">
+                <div class="pagination"><a><i class="fa fa-angle-double-left" aria-hidden="true" style="margin-right: 0"></i></a></div>
+                <div class="pagination"><a>1</a></div>
+                <div class="pagination"><a>2</a></div>
+                <div class="pagination"><a>3</a></div>
+                <div class="pagination"><a>4</a></div>
+                <div class="pagination"><a>5</a></div>
+                <div class="pagination"><a><i class="fa fa-angle-double-right" aria-hidden="true" style="margin-right: 0"></i></a></div>
             </div>
         </div>
     </div>
+    <div class="footer"><p>Copyright © 2019-2021 Web fundamental. All Rights Reserved. 备案号：沪BILIBILI备12138号-1</p></div>
 </body>
 </html>

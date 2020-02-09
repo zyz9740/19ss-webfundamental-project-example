@@ -4,29 +4,23 @@
     font-size: 0;       /* 取消因为回车符号造成的空白间隙 */
 }
 
+
+/* left */
+
 .left {
     width: 25%;
     display: inline-block;
     float: left;
 }
 
-.left p, .main p {
-    padding-left:20px;
-    margin: 0px;            /* 取消p元素的前后空白间隔 */
-    border-bottom: 1px solid #d1d5da;
-}
 
 .left a {
     color: #0366d6;
 }
 
 
-.search,.content,.country {
-    border: 1px solid #d1d5da;
-    border-radius: 5px;
+.block {
     margin: 20px;
-    line-height: 40px;
-    font-size: 14px;
 }
 
 .search-wrap {
@@ -48,15 +42,7 @@
 }
 
 
-.block-title{
-    background-color: #f3f5f8;
-    color: #586069;
-    font-weight: bold;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-
+/* main */
 
 .main {
     width: 73%;
@@ -69,10 +55,11 @@
     font-size: 14px;
 }
 
+/* filter */
+
 .filter-wrap {
     padding-left: 10px;
     border-bottom: 1px solid #d1d5da;
-
 }
 
 .filter-wrap select {
@@ -83,39 +70,26 @@
     margin-left: 10px;
 }
 
-.filter-wrap button {
+.confirm {
     width: 20%;
-    background-color: #60bc50;
-    border: solid 1px #60bc50;
-    padding: 10px;
     margin: 20px 10px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: white;
-    background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
 }
+
+
+/* display */
 
 .display {
     margin: 20px;
 }
 
 .display .display-col {
-    position: relative;
-    overflow: hidden;
     height: 200px;
     width: 20%;
-    display: inline-block;
     margin: 0 2%;
 }
 
-.display .display-col img {
-    width: auto;
-    height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    position: relative;
-}
+
+
 
 
 
