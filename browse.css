@@ -2,6 +2,7 @@
 .container {
     width: 100%;
     font-size: 0;       /* 取消因为回车符号造成的空白间隙 */
+    float: left;
 }
 
 

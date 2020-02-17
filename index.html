@@ -31,8 +31,8 @@
             for(let i = 0; i < k; i += 3) {
                 innerHTML += '<div class="display-row">';
                 for(let j = i; j < i+3; j++) {
-                    innerHTML += '<div class="display-col">';
-                    innerHTML += '<div><img src="img/scenes/' + newScene[j] + '" /></div>';
+                    innerHTML += `<div class="display-col" index="${newScene[j]}">`;
+                    innerHTML += `<div><img src="img/scenes/${newScene[j]}" /></div>`;
                     innerHTML += '<p class="title">Title</p>';
                     innerHTML += '<p class="intro">This is my first photograph, thank you for visiting and</p>'
                     innerHTML +=  '</div>';
@@ -56,6 +56,10 @@
                     scrollTop: 0
                 },500)
             });
+            // 点击图片跳转到详情页面
+            $('.display-col').click(function() {
+                window.location.href=`details.html?index=${$(this).attr('index')}`;
+            })
             // 自动显示
             $(window).scroll(function () {
                 if ($(window).scrollTop() > 500) {

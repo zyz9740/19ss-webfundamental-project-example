@@ -29,7 +29,7 @@
             for(let i = 0; i < k; i += 4) {
                 innerHTML += '<div class="display-row">';
                 for(let j = i; j < i+4; j++) {
-                    innerHTML += '<div class="display-col autofit-cell">';
+                    innerHTML += `<div class="display-col autofit-cell" index="${newScene[j]}">`;
                     innerHTML += '<img src="img/scenes/' + newScene[j] + '" />';
                     innerHTML +=  '</div>';
                 }
@@ -41,6 +41,11 @@
 
         $().ready(function () {
             refresh();
+
+            // 点击图片跳转到详情页面
+            $('.display-col').click(function() {
+                window.location.href=`details.html?index=${$(this).attr('index')}`;
+            })
         })
 
     </script>
@@ -73,49 +78,54 @@
     <div class="container">
         <div class="left">
             <div class="block">
-                <p class="block-title">Search</p>
+                <p class="block-title">Search by Title</p>
                 <div class="search-wrap">
-                    <input >
+                    <input type="text" name="title-filter"/>
                     <a><i class="fa fa-search fa-fw"></i></a>
                 </div>
             </div>
             <div class="block">
-                <p class="block-title">Content</p>
-                <p><a>China</a></p>
-                <p><a>China</a></p>
-                <p><a>China</a></p>
-                <p><a>China</a></p>
+                <p class="block-title">Hot Content</p>
+                <p><a></a></p>
+                <p><a>Scenery</a></p>
+                <p><a>City</a></p>
+                <p><a>People</a></p>
+                <p><a>Animal</a></p>
+                <p><a>Building</a></p>
+                <p><a>Wonder</a></p>
             </div>
             <div class="block">
-                <p class="block-title">Country</p>
+                <p class="block-title">Hot Country</p>
                 <p><a>China</a></p>
-                <p><a>China</a></p>
-                <p><a>China</a></p>
-                <p><a>China</a></p>
+                <p><a>Italy</a></p>
+                <p><a>Japan</a></p>
+                <p><a>America</a></p>
             </div>
         </div>
         <div class="main block">
             <p class="block-title">Filter</p>
             <div class="filter-wrap">
                 <select>
-                    <option>Apple</option>
-                    <option>Orange</option>
-                    <option>Pineapple</option>
-                    <option>Banana</option>
+                    <option>Filter by Content</option>
+                    <option>Scenery</option>
+                    <option>City</option>
+                    <option>People</option>
                 </select>
                 <select>
-                    <option>Apple</option>
-                    <option>Orange</option>
-                    <option>Pineapple</option>
-                    <option>Banana</option>
+                    <option>Filter by Country</option>
+                    <option>China</option>
+                    <option>Japan</option>
+                    <option>Italy</option>
+                    <option>America</option>
                 </select>
                 <select>
-                    <option>Apple</option>
-                    <option>Orange</option>
-                    <option>Pineapple</option>
-                    <option>Banana</option>
+                    <option>Filter by City</option>
+                    <option>TaiWan</option>
+                    <option>HongKong</option>
+                    <option>Shanghai</option>
+                    <option>Beijing</option>
                 </select>
-                <button class="confirm">Filter</button>
+                <button class="confirm" onclick="alert('Filter button is clicked')">Filter</button>
             </div>
             <div class="display"></div>
             <div class="paging">
