@@ -30,16 +30,18 @@
 
 .search-wrap>input {
     line-height: 40px;
-    width: 75%;
+    width: 70%;
     border-radius: inherit;
     border: 0px;
     border-right: 1px solid #d1d5da;
-    padding: 0px 0px 0px 10px;
+    padding: 0px 0px 0px 5%;
 }
 
 .search-wrap>a {
-    margin-left: 20px;
     color: #586069;
+    width: 20%;
+    display: inline-block;
+    text-align: center;
 }
 
 

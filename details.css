@@ -31,18 +31,16 @@ h2>span {
     visibility: hidden;
 }
 
-.display-row>.img{
-    width: 50%;
+.display-row>.img {
+    width: 46%;
     display: inline-block;
-    float:left;
-    height: 400px;
+    float: left;
+    margin: 2%;
 }
 
 .display-row>.img>img {
-    width: auto;
-    height: 100%;
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
+    width: 100%;
+    height: auto;
     position: relative;
 }
 
@@ -65,7 +63,8 @@ h2>span {
 #description {
     padding: 20px 5%;
     border:none;
-    text-indent:25px
+    text-indent:25px;
+    font-size: 12px;
 }
 
 .like-button {

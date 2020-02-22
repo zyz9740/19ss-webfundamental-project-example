@@ -39,13 +39,32 @@
             $('.display').html(innerHTML)
         }
 
+        function getCity(){
+            let city=[
+                ['Shanghai','Kunming','Beijing','Yantai'],
+                ['Tokyo', 'Osaka', 'Kamakura'],
+                ['Roma','Milan','Venice','Florence'],
+                ['New York','San Francisco', 'Washington']
+            ];
+            let countryIndex=parseInt($("select[name='country'] option:selected").attr('value'));
+            let citySelect = $("select[name='city']");
+            if(countryIndex >= 0) {
+                let cities = city[countryIndex];
+                let cityHtml = '<option>Filter by City</option>\n';
+                for (let i = 0; i < cities.length; i++) {
+                    cityHtml += `<option>${cities[i]}</option>`
+                }
+                citySelect.html(cityHtml)
+            }
+        }
+
         $().ready(function () {
             refresh();
-
             // 点击图片跳转到详情页面
             $('.display-col').click(function() {
                 window.location.href=`details.html?index=${$(this).attr('index')}`;
-            })
+            });
+            $("select[name='country']").change(getCity);
         })
 
     </script>
@@ -81,7 +100,9 @@
                 <p class="block-title">Search by Title</p>
                 <div class="search-wrap">
                     <input type="text" name="title-filter"/>
-                    <a class="pointer" onclick="alert('已按照标题搜索')"><i class="fa fa-search fa-fw"></i></a>
+                    <a class="pointer" onclick="alert('已按照标题搜索')">
+                        <i style="margin: 0" class="fa fa-search fa-fw"></i>
+                    </a>
                 </div>
             </div>
             <div class="block">
@@ -104,25 +125,21 @@
         <div class="main block">
             <p class="block-title">Filter</p>
             <div class="filter-wrap">
-                <select>
+                <select name="content" onChange="getCity()">
                     <option>Filter by Content</option>
                     <option>Scenery</option>
                     <option>City</option>
                     <option>People</option>
                 </select>
-                <select>
-                    <option>Filter by Country</option>
-                    <option>China</option>
-                    <option>Japan</option>
-                    <option>Italy</option>
-                    <option>America</option>
+                <select name="country">
+                    <option value="-1">Filter by Country</option>
+                    <option value="0">China</option>
+                    <option value="1">Japan</option>
+                    <option value="2">Italy</option>
+                    <option value="3">America</option>
                 </select>
-                <select>
+                <select name="city">
                     <option>Filter by City</option>
-                    <option>TaiWan</option>
-                    <option>HongKong</option>
-                    <option>Shanghai</option>
-                    <option>Beijing</option>
                 </select>
                 <button class="confirm" onclick="alert('多级筛选已完成')">Filter</button>
             </div>
