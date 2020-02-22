@@ -29,9 +29,9 @@
             for(let i = 0; i < k; i += 4) {
                 innerHTML += '<div class="display-row">';
                 for(let j = i; j < i+4; j++) {
-                    innerHTML += `<div class="display-col autofit-cell" index="${newScene[j]}">`;
+                    innerHTML += `<a href="details.html"><div class="display-col autofit-cell" index="${newScene[j]}">`;
                     innerHTML += '<img src="img/scenes/' + newScene[j] + '" />';
-                    innerHTML +=  '</div>';
+                    innerHTML +=  '</div></a>';
                 }
                 innerHTML += '</div>';
             }
@@ -81,25 +81,24 @@
                 <p class="block-title">Search by Title</p>
                 <div class="search-wrap">
                     <input type="text" name="title-filter"/>
-                    <a><i class="fa fa-search fa-fw"></i></a>
+                    <a class="pointer" onclick="alert('已按照标题搜索')"><i class="fa fa-search fa-fw"></i></a>
                 </div>
             </div>
             <div class="block">
                 <p class="block-title">Hot Content</p>
-                <p><a></a></p>
-                <p><a>Scenery</a></p>
-                <p><a>City</a></p>
-                <p><a>People</a></p>
-                <p><a>Animal</a></p>
-                <p><a>Building</a></p>
-                <p><a>Wonder</a></p>
+                <p><a onclick="alert('已按照主题搜索')">Scenery</a></p>
+                <p><a onclick="alert('已按照主题搜索')">City</a></p>
+                <p><a onclick="alert('已按照主题搜索')">People</a></p>
+                <p><a onclick="alert('已按照主题搜索')">Animal</a></p>
+                <p><a onclick="alert('已按照主题搜索')">Building</a></p>
+                <p><a onclick="alert('已按照主题搜索')">Wonder</a></p>
             </div>
             <div class="block">
                 <p class="block-title">Hot Country</p>
-                <p><a>China</a></p>
-                <p><a>Italy</a></p>
-                <p><a>Japan</a></p>
-                <p><a>America</a></p>
+                <p><a onclick="alert('已按照国家搜索')">China</a></p>
+                <p><a onclick="alert('已按照国家搜索')">Italy</a></p>
+                <p><a onclick="alert('已按照国家搜索')">Japan</a></p>
+                <p><a onclick="alert('已按照国家搜索')">America</a></p>
             </div>
         </div>
         <div class="main block">
@@ -125,7 +124,7 @@
                     <option>Shanghai</option>
                     <option>Beijing</option>
                 </select>
-                <button class="confirm" onclick="alert('Filter button is clicked')">Filter</button>
+                <button class="confirm" onclick="alert('多级筛选已完成')">Filter</button>
             </div>
             <div class="display"></div>
             <div class="paging">

@@ -31,11 +31,11 @@
             for(let i = 0; i < k; i += 3) {
                 innerHTML += '<div class="display-row">';
                 for(let j = i; j < i+3; j++) {
-                    innerHTML += `<div class="display-col" index="${newScene[j]}">`;
+                    innerHTML += `<a href="details.html"><div class="display-col" index="${newScene[j]}">`;
                     innerHTML += `<div><img src="img/scenes/${newScene[j]}" /></div>`;
                     innerHTML += '<p class="title">Title</p>';
                     innerHTML += '<p class="intro">This is my first photograph, thank you for visiting and</p>'
-                    innerHTML +=  '</div>';
+                    innerHTML +=  '</div></a>';
                 }
                 innerHTML += '</div>';
             }
@@ -45,30 +45,6 @@
 
         $().ready(function () {
             refresh();
-            // 点击刷新按钮
-            $('.refresh').click(function () {
-                // console.log(innerHTML)
-                refresh();
-            });
-            // 点击返回顶部按钮
-            $('.back2top').click(function () {
-                $('body,html').animate({
-                    scrollTop: 0
-                },500)
-            });
-            // 点击图片跳转到详情页面
-            $('.display-col').click(function() {
-                window.location.href=`details.html?index=${$(this).attr('index')}`;
-            })
-            // 自动显示
-            $(window).scroll(function () {
-                if ($(window).scrollTop() > 500) {
-                    $(".refresh,.back2top").fadeIn(500);
-                }
-                else {
-                    $(".refresh,.back2top").fadeOut(500);
-                }
-            });
         });
 
 
@@ -128,10 +104,10 @@
             </div>
             <p class="copyright">Copyright © 2019-2021 Web fundamental. All Rights Reserved. 备案号：沪BILIBILI备12138号-1</p>
         </div>
-        <div class="refresh">
+        <div class="refresh" onclick="alert('图片已刷新')">
             <img src="img/icons/refresh.png" />
         </div>
-        <div class="back2top">
+        <div class="back2top" onclick="alert('回到页面顶部')">
             <img src="img/icons/back2top.png" />
         </div>
     </div>

@@ -13,7 +13,7 @@
     height: 200px;
 }
 
-.display-row>.img{
+.display-row .img{
     height: 200px;
     width: 20%;
     display: inline-block;
