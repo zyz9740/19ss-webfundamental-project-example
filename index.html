@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="common.css" rel="stylesheet" type="text/css" />
-    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="src/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="src/css/index.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <title>Index</title>
@@ -31,7 +31,7 @@
             for(let i = 0; i < k; i += 3) {
                 innerHTML += '<div class="display-row">';
                 for(let j = i; j < i+3; j++) {
-                    innerHTML += `<a href="details.html"><div class="display-col" index="${newScene[j]}">`;
+                    innerHTML += `<a href="src/html/details.html"><div class="display-col" index="${newScene[j]}">`;
                     innerHTML += `<div><img src="img/scenes/${newScene[j]}" /></div>`;
                     innerHTML += '<p class="title">Title</p>';
                     innerHTML += '<p class="intro">This is my first photograph, thank you for visiting and</p>'
@@ -72,8 +72,8 @@
                 <ul>
                     <li><img src="img/icons/logo.jpg" class="nav-logo"></li>
                     <li><a href="index.html" class="nav-active">Home</a></li>
-                    <li><a href="browse.html">Browse</a></li>
-                    <li><a href="search.html">Search</a></li>
+                    <li><a href="src/html/browse.html">Browse</a></li>
+                    <li><a href="src/html/search.html">Search</a></li>
                 </ul>
             </div>
             <div class="nav-right">
@@ -82,10 +82,10 @@
                 </ul>
                 <div class="nav-right-float">
                     <ul>
-                        <li><a href="upload.html"><i class="fa fa-upload"></i>Upload</a></li>
-                        <li><a href="myUpload.html"><i class="fa fa-photo"></i>My Photo</a></li>
-                        <li><a href="favorite.html"><i class="fa fa-heart"></i>My Favorite</a></li>
-                        <li><a href="login.html"><i class="fa fa-sign-in"></i>Log In</a></li>
+                        <li><a href="src/html/upload.html"><i class="fa fa-upload"></i>Upload</a></li>
+                        <li><a href="src/html/myUpload.html"><i class="fa fa-photo"></i>My Photo</a></li>
+                        <li><a href="src/html/favorite.html"><i class="fa fa-heart"></i>My Favorite</a></li>
+                        <li><a href="src/html/login.html"><i class="fa fa-sign-in"></i>Log In</a></li>
                     </ul>
                 </div>
             </div>

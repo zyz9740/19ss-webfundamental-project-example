@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="common.css" rel="stylesheet" type="text/css" />
-    <link href="browse.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="../css/common.css" rel="stylesheet" type="text/css" />
+    <link href="../css/browse.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../../font-awesome-4.7.0/css/font-awesome.min.css">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         let scenes = [];
@@ -30,7 +30,7 @@
                 innerHTML += '<div class="display-row">';
                 for(let j = i; j < i+4; j++) {
                     innerHTML += `<a href="details.html"><div class="display-col autofit-cell" index="${newScene[j]}">`;
-                    innerHTML += '<img src="img/scenes/' + newScene[j] + '" />';
+                    innerHTML += '<img src=' + newScene[j] + '"../../img/scenes" />';
                     innerHTML +=  '</div></a>';
                 }
                 innerHTML += '</div>';
@@ -74,8 +74,8 @@
     <div class="nav">
         <div class="nav-left">
             <ul>
-                <li><img src="img/icons/logo.jpg" class="nav-logo"></li>
-                <li><a href="index.html">Home</a></li>
+                <li><img src="../../img/icons/logo.jpg" class="nav-logo"></li>
+                <li><a href="../../index.html">Home</a></li>
                 <li><a href="browse.html" class="nav-active">Browse</a></li>
                 <li><a href="search.html">Search</a></li>
             </ul>
